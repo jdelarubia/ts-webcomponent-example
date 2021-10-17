@@ -1,0 +1,17 @@
+{
+    "name": "2021-benabola-checkout",
+    "version": "2021.10.14",
+    "description": "2021 benabola hotel online payments",
+    "scripts": {
+        "BUILD": "run-s --silent compile browserify",
+        "compile": "tsc",
+        "browserify": "browserify --debug ./src/js/main.js --output ./src/main.mjs > ./html/js/bundle.js"
+    },
+    "keywords": [],
+    "author": "Javier de la Rubia",
+    "license": "MIT",
+    "devDependencies": {
+        "npm-run-all": "^4.1.5",
+        "browserify": "^17.0.0"
+    }
+}
