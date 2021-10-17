@@ -1,3 +1,6 @@
+# DON'T commit this during development
+bundle.js
+
 # Intermediary files
 src/js/
 
