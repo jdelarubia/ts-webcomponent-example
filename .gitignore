@@ -3,6 +3,7 @@ bundle.js
 
 # Intermediary files
 src/js/
+devdocs/
 
 # Logs
 logs
