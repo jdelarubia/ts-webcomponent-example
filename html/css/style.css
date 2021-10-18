@@ -1,0 +1,30 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+body {
+    background-color: bisque;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+main {
+    margin: 0 auto;
+    width: 40em;
+}
+input[type="number"]:focus {
+    outline: none;
+}
+input[type="number"] {
+    appearance: textfield;
+    background-color: transparent;
+    border: 0;
+    font-size: large;
+    text-align: center;
+    width: 2em;
+}
+h1 {
+    line-height: 4rem;
+    color: darkgoldenrod;
+}
+p {
+    line-height: 2rem;
+}
