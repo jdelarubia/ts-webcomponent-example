@@ -5,10 +5,30 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>TypeScript Web Component Example</title>
+        <link rel="stylesheet" href="./css/style.css" />
     </head>
     <body>
-        Hello!
+        <main>
+            <h1>Age to start coding calculator</h1>
+            <p>Enter your age and expect a motivation phrase.</p>
 
+            <p>
+                I'm
+                <input
+                    type="number"
+                    name=""
+                    id="age"
+                    size="2"
+                    is="age-to-code"
+                />
+                years old.
+            </p>
+
+            <br />
+
+            <p id="phrase" is="motivation-phrase"></p>
+        </main>
+        
         <script src="./js/bundle.js"></script>
     </body>
 </html>
