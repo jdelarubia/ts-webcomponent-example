@@ -1,6 +1,14 @@
-# Extending existing component using TypeScript classes
+# Extending existing HTML components using TypeScript
 
-In this simple example, I extend an `input number` element in combination with a `p` element to show a motivation phrase.
+Collection of simple examples on how to extend the functionality or the look of an existing HTML component.
+
+## Development notes
+
+Project make use of the ESNext modules so all the modules need to be included in the following manner.
+
+```html
+<script src="path-to-module.js" type="module"><script>
+```
 
 ---
 
