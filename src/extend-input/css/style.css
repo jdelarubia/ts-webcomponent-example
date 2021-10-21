@@ -24,6 +24,7 @@ input[type="number"] {
 h1 {
     line-height: 4rem;
     color: darkgoldenrod;
+    text-align: center;
 }
 p {
     line-height: 2rem;
