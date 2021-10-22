@@ -4,7 +4,8 @@
     "description": "2021 benabola hotel online payments",
     "scripts": {
         "BUILD": "run-s --silent compile ",
-        "compile": "tsc"
+        "compile": "tsc",
+        "watch-ts": "tsc -w"
     },
     "keywords": [],
     "author": "Javier de la Rubia",
