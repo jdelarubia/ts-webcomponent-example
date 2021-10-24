@@ -1,0 +1,40 @@
+:host {
+    --bg-color: chocolate;
+    --bg-color: black;
+    --button-bg-color: darkslategrey;
+    --fg-color: white;
+    --fg-h3: darkcyan;
+    --font: Arial, sans-serif;
+    --font-size: xx-large;
+    --thumbsize: 5.8em;
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    display: inline-block;
+    font-family: var(--font);
+    width: 100%;
+}
+span.counter {
+    font-size: xx-large;
+}
+simple-counter {
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+}
+h3 {
+    display: block;
+    color: var(--fg-h3);
+}
+button {
+    color: var(--fg-color);
+    border: 0;
+    border-radius: 0;
+    background-color: var(--button-bg-color);
+    height: var(--thumbsize);
+    min-width: var(--thumbsize);
+    padding: 1rem;
+    text-transform: uppercase;
+}
+button:hover {
+    filter: brightness(0.7);
+}
