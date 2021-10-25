@@ -1,0 +1,37 @@
+:host {
+    --nn-thumbsize: 1.8em;
+    --nn-button-bg-color: darkslategrey;
+    --nn-elem-spacing: 0.05rem;
+    --nn-font-size: x-large;
+}
+super-number {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+* {
+    border: 0;
+    border-radius: 0;
+    font-size: var(--nn-font-size);
+    margin: 0;
+    margin-right: var(--nn-elem-spacing);
+    text-align: center;
+    min-height: var(--nn-thumbsize);
+    padding: 0 0.1rem;
+}
+*:hover {
+    filter: brightness(0.85);
+}
+button {
+    background-color: var(--nn-button-bg-color);
+    color: white;
+    height: var(--nn-thumbsize);
+    min-width: var(--nn-thumbsize);
+}
+input[type="number"] {
+    appearance: none;
+    -moz-appearance: textfield;
+    background-color: lightgrey;
+    max-width: 4em;
+    min-width: 4em;
+}
