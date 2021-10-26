@@ -7,8 +7,8 @@ template.innerHTML =
     <div>
         <h3></h3>
         <div class="info">
-            <p><slot name="email" /></p>
-            <p><slot name="phone" /></p>
+            <p>Email: <slot name="email" /></p>
+            <p>Phone: <slot name="phone" /></p>
         </div>
         <button id="toggle">hide</button>
     </div>
