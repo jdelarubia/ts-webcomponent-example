@@ -1,0 +1,37 @@
+:host {
+    --bg-button: #d4a373;
+    --fg-button: #fefae0;
+    --background: #fefae0;
+    --text: #d4a373;
+    --h3: #ccd5ae;
+}
+.user-card {
+    background-color: var(--background);
+    border-bottom: var(--bg-button) 5px solid;
+    color: var(--text);
+    display: grid;
+    font-family: "Arial", sans-serif;
+    font-size: small;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: 10px;
+    margin-bottom: 15px;
+    width: 500px;
+}
+.user-card h3 {
+    color: var(--h3);
+}
+.user-card img {
+    width: 100%;
+}
+.user-card button {
+    cursor: pointer;
+    background: var(--bg-button);
+    border: 0;
+    border-radius: 2px;
+    color: var(--fg-button);
+    padding: 5px 10px;
+    text-transform: uppercase;
+}
+button:hover {
+    filter: brightness(0.8);
+}
