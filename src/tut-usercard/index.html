@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>UserCard Demo by Traversy Media</title>
+        <style>
+            body {
+                background-color: #faedcd;
+            }
+            h1 {
+                color: #d4a373;
+            }
+        </style>
+    </head>
+    <body>
+        <main>
+            <h1>UserCard demo</h1>
+            <user-card
+                name="John Doe"
+                avatar="https://randomuser.me/api/portraits/men/5.jpg"
+            >
+                <div slot="email">john@does.org</div>
+                <div slot="phone">111-999-333</div>
+            </user-card>
+            <user-card
+                name="Jane of the Jungle"
+                avatar="https://randomuser.me/api/portraits/women/4.jpg"
+            >
+                <div slot="email">janedoe@megacorp.bizz</div>
+                <div slot="phone">999-111-666</div>
+            </user-card>
+        </main>
+
+        <script src="./code/UserCard.js" type="module"></script>
+    </body>
+</html>
