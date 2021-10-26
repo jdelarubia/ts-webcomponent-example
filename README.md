@@ -19,3 +19,4 @@ Project make use of the ESNext modules so all the modules need to be included in
 -   [YT JavaScript Events](https://www.youtube.com/playlist?list=PLyuRouwmQCjnEupVi5lpP6VrLg-eO-Zcp)
 -   [Custom events in JS: complete guide?](https://blog.logrocket.com/custom-events-in-javascript-a-complete-guide/)
 -   [HTML Symbols](https://www.htmlsymbol.com/)
+-   [Coolors.co palettes](https://coolors.co/palettes/trending)
