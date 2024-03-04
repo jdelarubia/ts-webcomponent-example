@@ -1,0 +1,41 @@
+:root {
+  --primary: #2b2a33;
+  --background-field: #dddce4;
+}
+article {
+  border-color: var(--primary);
+}
+
+article {
+  background-color: var(--background-field);
+  border-width: 1px;
+  border-style: solid;
+  line-height: 1.4em;
+  display: block;
+  margin: 0 auto;
+  height: 8em;
+  padding: 0.5em;
+}
+.counter {
+  color: var(--primary);
+  font-size: small;
+  margin: 0.5em auto;
+  text-align: right;
+}
+
+/* ********* */
+/* Dark mode */
+/* ********* */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #fbfbfb;
+    --background-field: #42414d;
+  }
+  article {
+    border-color: #aaa;
+    color: var(--primary);
+  }
+  .counter {
+    color: var(--primary);
+  }
+}
