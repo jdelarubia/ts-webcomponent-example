@@ -1,5 +1,6 @@
 # DON'T commit this during development
 bundle.js
+depr-*
 
 # Intermediary files
 src/js/
