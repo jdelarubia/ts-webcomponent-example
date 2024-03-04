@@ -1,9 +1,9 @@
 {
   "name": "ts-webcomponent-examples",
-  "version": "2024-01-29",
+  "version": "2024.01.29",
   "description": "Web Component Examples in TypeScript",
   "scripts": {
-    "BUILD": "npm-run-all --silent compile ",
+    "BUILD": "npm-run-all compile",
     "compile": "tsc",
     "watch-ts": "tsc --watch"
   },
