@@ -31,7 +31,14 @@ class WordCount extends HTMLElement {
     }, this.refreshRate)
   }
 
+  _getElementDimensions(): [string, string] {
+    const width = this.getAttribute('width')
+    const height = this.getAttribute('height')
+    return [height ? height : WordCount.HEIGHT, width ? width : WordCount.WIDTH]
+  }
+
   _render() {
+    const [height, width] = this._getElementDimensions()
     const css = `<style> @import "./src/wc-word-count.css"; </style>`
     const html = `<article contenteditable="" id="word-counter-container">Edit your text here...</article>
     <div class="counter" id="word-counter"></div>`
