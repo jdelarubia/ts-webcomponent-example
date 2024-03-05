@@ -10,6 +10,8 @@ class WordCount extends HTMLElement {
   private refreshRate: number
   // defaults
   static REFRESH = 1500
+  static WIDTH = '20em'
+  static HEIGHT = '10em'
 
   constructor(refreshRate: number) {
     super()
