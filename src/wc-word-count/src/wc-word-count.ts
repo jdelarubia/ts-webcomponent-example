@@ -69,3 +69,13 @@ class WordCount extends HTMLElement {
 } //. WordCount
 
 window.customElements.define('wc-word-count', WordCount)
+
+// Create and add a WordCount component programmatically
+const secondHalf = document.querySelector('#second-half')
+secondHalf?.appendChild(
+  new WordCount({
+    width: '10em',
+    height: '5em',
+    initText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+  })
+)
