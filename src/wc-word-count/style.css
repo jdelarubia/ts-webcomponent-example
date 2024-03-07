@@ -5,7 +5,7 @@ html {
   font-family: sans-serif;
 }
 main {
-  width: 60%;
+  margin: 0 auto;
 }
 
 :root {
@@ -19,8 +19,9 @@ body {
   color: var(--primary);
 }
 
+/* ********* */
 /* Dark mode */
-
+/* ********* */
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #fbfbfe;
