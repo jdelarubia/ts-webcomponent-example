@@ -20,6 +20,7 @@ class WordCount extends HTMLElement {
   static WIDTH = '20em'
   static HEIGHT = '10em'
   static INITTEXT = 'Enter some text here...'
+  static CSSFILE = './src/wc-word-count.css'
 
   constructor(attrs: WordCountAttrs = {}) {
     super()
@@ -49,7 +50,7 @@ class WordCount extends HTMLElement {
 
   _render() {
     const [height, width] = this._getElementDimensions()
-    const css = `<style> @import "./src/wc-word-count.css"; </style>`
+    const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
     <textarea contenteditable>${this.initText}</textarea>
     <div id="word-counter"></div>
