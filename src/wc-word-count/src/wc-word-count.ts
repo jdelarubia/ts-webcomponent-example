@@ -1,29 +1,39 @@
 /**
  * wc-word-count.ts
- * Simple Word counter element.
- * Creates an editable article with its number of words below.
+ *
+ * Creates an editable textarea which shows the number of words on the bottom right corner.
  * The position and look of element can be set via CSS.
  */
 
+type WordCountAttrs = {
+  refreshRate?: number
+  width?: string
+  height?: string
+  initText?: string
+}
 class WordCount extends HTMLElement {
   private template
+  private initText: string
   private refreshRate: number
   // defaults
-  static REFRESH = 1500
+  static REFRESH = 2500
   static WIDTH = '20em'
   static HEIGHT = '10em'
+  static INITTEXT = 'Enter some text here...'
 
-  constructor(refreshRate: number) {
+  constructor(attrs: WordCountAttrs = {}) {
     super()
-    this.refreshRate = refreshRate || WordCount.REFRESH
+    this.refreshRate = attrs.refreshRate || WordCount.REFRESH
+    this.initText = this.textContent || attrs?.initText || WordCount.INITTEXT
+    this.textContent = ''
     this.template = document.createElement('template')
     this.template.innerHTML = this._render()
   }
 
   connectedCallback() {
     this.appendChild(this.template.content.cloneNode(true))
-    const editableContent = <HTMLDivElement>this.querySelector('#word-counter-container')
-    const wordCount = <HTMLDivElement>this.querySelector('#word-counter')
+    const editableContent = <HTMLTextAreaElement>this.querySelector('textarea')
+    const wordCount = <HTMLDivElement>this.querySelector('div#word-counter')
 
     setInterval(() => {
       const content = editableContent.textContent || ''
@@ -40,8 +50,10 @@ class WordCount extends HTMLElement {
   _render() {
     const [height, width] = this._getElementDimensions()
     const css = `<style> @import "./src/wc-word-count.css"; </style>`
-    const html = `<article contenteditable="" id="word-counter-container">Edit your text here...</article>
-    <div class="counter" id="word-counter"></div>`
+    const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
+    <textarea contenteditable>${this.initText}</textarea>
+    <div id="word-counter"></div>
+    </div>`
     return css + html
   }
 
