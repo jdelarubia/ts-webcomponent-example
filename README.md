@@ -21,3 +21,18 @@ Project make use of the ESNext modules so all the modules need to be included in
 - [HTML Symbols](https://www.htmlsymbol.com/)
 - [Coolors.co palettes](https://coolors.co/palettes/trending)
 - [YT Progress Bar with Web Components in JavaScript](https://www.youtube.com/watch?v=QWvK5_5hL7I)
+
+---
+
+## Development
+
+```bash
+# while on dev mode
+npm run watch-ts
+
+# generates the JavaScript files to be distributed
+npm run BUILD
+```
+
+---
+
