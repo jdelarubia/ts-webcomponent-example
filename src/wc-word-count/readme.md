@@ -2,34 +2,33 @@
 
 This example uses a `<textarea>` to allow us to write text, followed by a `<div>` to show the number of words in it.
 
-## Development
+## TOC
 
-```bash
-# while on dev mode
-npm run watch-ts
+- [WordCount](#wordcount)
+  - [TOC](#toc)
+  - [Component distribution](#component-distribution)
+  - [Code examples](#code-examples)
 
-# generates the JavaScript to be distributed
-npm run BUILD
-```
+---
 
-## Distribution
+## Component distribution
 
 - Copy `src/wc-word-count.css` & `src/wc-word-count.js` on to your project.
 - Fix the linking to `wc-word-count.css` from your `wc-word-count.js`.
 
-## Examples
+---
 
-Via `html`:
+## Code examples
+
+Via `html`, provide` width`, `height` and `innerText` like this:
 
 ```html
-<!-- Provide` width`, `height` and `innerText` like so: -->
 <wc-word-count width="22em" height="20em">Enter some text here...</wc-word-count>
 ```
 
-Via `JavaScript`:
+Via `JavaScript`, provide` width`, `height` and `innerText` in an attribute like in the example below:
 
 ```javascript
-// Provide` width`, `height` and `innerText` in an attribute like this:
 const containerSection = document.querySelector('#container-section')
 containerSection.appendChild(
   new WordCount({
