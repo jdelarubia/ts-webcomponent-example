@@ -10,6 +10,9 @@ type WordCountAttrs = {
   width?: string
   height?: string
   initText?: string
+  resize?: Boolean
+  height?: string
+  width?: string
 }
 
 class WordCount extends HTMLElement {
@@ -20,6 +23,7 @@ class WordCount extends HTMLElement {
   static REFRESH = 2500
   static WIDTH = '20em'
   static HEIGHT = '10em'
+  static RESIZE = true
   static INITTEXT = 'Enter some text here...'
   static CSSFILE = './src/wc-word-count.css'
 
@@ -43,6 +47,11 @@ class WordCount extends HTMLElement {
     }, this.refreshRate)
   }
 
+  _getResize(): string {
+    const resize = this.getAttribute('resize')?.toLowerCase()
+    return resize === 'false' ? 'none' : 'both'
+  }
+
   _getRefreshRate(): number | null {
     const refreshRate = <string>this.getAttribute('refreshrate')
     return parseInt(refreshRate) || null
@@ -56,9 +65,10 @@ class WordCount extends HTMLElement {
 
   _render() {
     const [height, width] = this._getElementDimensions()
+    const resize = this._getResize()
     const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
-    <textarea id="word-counter-container" placeholder="${this.initText}"></textarea>
+    <textarea id="word-counter-container" placeholder="${this.initText}" style="resize:${resize}"></textarea>
     <div id="word-counter"></div>
     </div>`
     return css + html
