@@ -101,6 +101,6 @@ secondHalf?.appendChild(
   new WordCount({
     width: '10em',
     height: '5em',
-    initText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    placeholder: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
   })
 )
