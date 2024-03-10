@@ -20,21 +20,30 @@ This example uses a `<textarea>` to allow us to write text, followed by a `<div>
 
 ## Code examples
 
-Via `html`, provide` width`, `height` and `innerText` like this:
+Via `html`, provide `name`, `width`, `height`, `resize`, `refreshrate` and `placeholder` like this:
 
 ```html
-<wc-word-count width="22em" height="20em">Enter some text here...</wc-word-count>
+<wc-word-count
+  width="22em"
+  height="20em"
+  name="textarea-fieldname"
+  refresh="3000"
+  placeholder="Enter some text here..."
+></wc-word-count>
 ```
 
-Via `JavaScript`, provide` width`, `height` and `innerText` in an attribute like in the example below:
+Via `JavaScript`, provide the same attributes as an object like in the example below:
 
 ```javascript
 const containerSection = document.querySelector('#container-section')
 containerSection.appendChild(
   new WordCount({
+    name: 'textarea-fieldname',
+    refresh: '3000',
     width: '10em',
     height: '5em',
-    initText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    resize: false,
+    placeholder: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
   })
 )
 ```
