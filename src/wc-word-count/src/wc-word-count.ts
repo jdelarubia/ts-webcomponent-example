@@ -45,7 +45,7 @@ class WordCount extends HTMLElement {
 
     setInterval(() => {
       const content = editableContent.value || ''
-      wordCount.textContent = this.countWords(content).toString()
+      wordCount.textContent = this._countWords(content).toString()
     }, this.refreshRate)
   }
 
@@ -81,7 +81,7 @@ class WordCount extends HTMLElement {
    * @param textContent
    * @return number
    */
-  countWords(textContent: string): number {
+  _countWords(textContent: string): number {
     if (textContent == '' || textContent.length === 0 || !textContent) return 0
     return textContent.trim().toLocaleLowerCase().split(' ').length
   }
