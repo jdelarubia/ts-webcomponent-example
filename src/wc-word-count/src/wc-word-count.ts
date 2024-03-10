@@ -57,19 +57,20 @@ class WordCount extends HTMLElement {
     return resize === 'false' ? 'none' : 'both'
   }
 
-  _getRefreshRate(): number | null {
-    const refreshRate = <string>this.getAttribute('refreshrate')
-    return parseInt(refreshRate) || null
-  }
-
-  _getElementDimensions(): [string, string] {
-    const width = this.getAttribute('width')
-    const height = this.getAttribute('height')
-    return [height ? height : WordCount.HEIGHT, width ? width : WordCount.WIDTH]
+  /**
+   * Generic method to retrieve the value of an attribute or, if not present, a default value.
+   * @param id string
+   * @param defaultValue string|number
+   * @returns string|number
+   */
+  _getAttributeOrDefault(id: string, defaultValue: string | number): string | number {
+    const attr = this.getAttribute(id)?.toLowerCase()
+    return attr || defaultValue
   }
 
   _render() {
-    const [height, width] = this._getElementDimensions()
+    const width = this._getAttributeOrDefault('width', WordCount.WIDTH)
+    const height = this._getAttributeOrDefault('height', WordCount.HEIGHT)
     const resize = this._getResize()
     const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
