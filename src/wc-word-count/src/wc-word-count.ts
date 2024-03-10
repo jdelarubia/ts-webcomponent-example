@@ -11,6 +11,7 @@ type WordCountAttrs = {
   height?: string
   initText?: string
 }
+
 class WordCount extends HTMLElement {
   private template
   private initText: string
@@ -52,7 +53,7 @@ class WordCount extends HTMLElement {
     const [height, width] = this._getElementDimensions()
     const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
-    <textarea contenteditable>${this.initText}</textarea>
+    <textarea id="word-counter-container" placeholder="${this.initText}"></textarea>
     <div id="word-counter"></div>
     </div>`
     return css + html
