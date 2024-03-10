@@ -23,6 +23,7 @@ class WordCount extends HTMLElement {
   private placeholder: string
   private refreshRate: number
   // defaults
+  static NAME = ''
   static REFRESH = 2500
   static WIDTH = '20em'
   static HEIGHT = '10em'
@@ -71,10 +72,11 @@ class WordCount extends HTMLElement {
   _render() {
     const width = this._getAttributeOrDefault('width', WordCount.WIDTH)
     const height = this._getAttributeOrDefault('height', WordCount.HEIGHT)
+    const name = this._getAttributeOrDefault('name', WordCount.NAME)
     const resize = this._getResize()
     const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
-    <textarea id="word-counter-container" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
+    <textarea id="word-counter-container" name="${name}" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
     <div id="word-counter"></div>
     </div>`
     return css + html
