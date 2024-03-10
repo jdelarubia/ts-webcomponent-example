@@ -26,7 +26,7 @@ class WordCount extends HTMLElement {
   static REFRESH = 2500
   static WIDTH = '20em'
   static HEIGHT = '10em'
-  static RESIZE = true
+  static RESIZE = 'both'
   static PLACEHOLDER = 'Enter some text here...'
   static CSSFILE = './src/wc-word-count.css'
 
@@ -54,7 +54,7 @@ class WordCount extends HTMLElement {
 
   _getResize(): string {
     const resize = this.getAttribute('resize')?.toLowerCase()
-    return resize === 'false' ? 'none' : 'both'
+    return resize === 'false' ? 'none' : WordCount.RESIZE
   }
 
   /**
