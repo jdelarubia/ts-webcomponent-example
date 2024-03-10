@@ -82,7 +82,7 @@ class WordCount extends HTMLElement {
 
   /**
    * Given some text, return the number of words in that text.
-   * @param textContent
+   * @param textContent string
    * @return number
    */
   _countWords(textContent: string): number {
