@@ -37,7 +37,7 @@ class WordCount extends HTMLElement {
     const wordCount = <HTMLDivElement>this.querySelector('div#word-counter')
 
     setInterval(() => {
-      const content = editableContent.textContent || ''
+      const content = editableContent.value || ''
       wordCount.textContent = this.countWords(content).toString()
     }, this.refreshRate)
   }
