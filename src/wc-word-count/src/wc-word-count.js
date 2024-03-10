@@ -5,6 +5,7 @@
  * Creates an editable textarea which shows the number of words on the bottom right corner.
  * The position and look of element can be set via CSS.
  * Possible attributes:
+ * - name: name of the textarea
  * - width & height: give dimensions to the textarea
  * - refreshrate: frequency (in milliseconds) at which for counting the number of words
  * - placeholder: phrase to be displayed in the textarea
@@ -15,6 +16,7 @@ class WordCount extends HTMLElement {
     placeholder;
     refreshRate;
     // defaults
+    static NAME = '';
     static REFRESH = 2500;
     static WIDTH = '20em';
     static HEIGHT = '10em';
@@ -55,10 +57,11 @@ class WordCount extends HTMLElement {
     _render() {
         const width = this._getAttributeOrDefault('width', WordCount.WIDTH);
         const height = this._getAttributeOrDefault('height', WordCount.HEIGHT);
+        const name = this._getAttributeOrDefault('name', WordCount.NAME);
         const resize = this._getResize();
         const css = `<style> @import ${WordCount.CSSFILE}; </style>`;
         const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
-    <textarea id="word-counter-container" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
+    <textarea id="word-counter-container" name="${name}" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
     <div id="word-counter"></div>
     </div>`;
         return css + html;
@@ -76,11 +79,9 @@ class WordCount extends HTMLElement {
 } //. WordCount
 window.customElements.define('wc-word-count', WordCount);
 // Create and add a WordCount component programmatically
-// const secondHalf = document.querySelector('#second-half')
-// secondHalf?.appendChild(
-//   new WordCount({
-//     width: '10em',
-//     height: '5em',
-//     initText: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-//   })
-// )
+const secondHalf = document.querySelector('#second-half');
+secondHalf?.appendChild(new WordCount({
+    width: '10em',
+    height: '5em',
+    placeholder: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+}));
