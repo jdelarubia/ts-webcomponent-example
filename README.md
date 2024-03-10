@@ -2,6 +2,11 @@
 
 Collection of simple examples on how to extend the functionality or the look of an existing HTML component.
 
+- [wc-word-count](./src/wc-word-count/readme.md)
+  Component that allows to edit some text in a `<textarea>` and count the number of words in it.
+
+---
+
 ## Development notes
 
 Project make use of the ESNext modules so all the modules need to be included in the following manner.
