@@ -12,7 +12,7 @@
 
 type WordCountAttrs = {
   refreshRate?: number
-  initText?: string
+  placeholder?: string
   resize?: Boolean
   height?: string
   width?: string
@@ -20,20 +20,19 @@ type WordCountAttrs = {
 
 class WordCount extends HTMLElement {
   private template
-  private initText: string
+  private placeholder: string
   private refreshRate: number
   // defaults
   static REFRESH = 2500
   static WIDTH = '20em'
   static HEIGHT = '10em'
   static RESIZE = true
-  static INITTEXT = 'Enter some text here...'
+  static PLACEHOLDER = 'Enter some text here...'
   static CSSFILE = './src/wc-word-count.css'
 
   constructor(attrs: WordCountAttrs = {}) {
     super()
-    this.refreshRate = this._getRefreshRate() || attrs?.refreshRate || WordCount.REFRESH
-    this.initText = this.textContent || attrs?.initText || WordCount.INITTEXT
+    this.placeholder = attrs?.placeholder || this.textContent || WordCount.PLACEHOLDER
     this.textContent = ''
     this.template = document.createElement('template')
     this.template.innerHTML = this._render()
@@ -71,7 +70,7 @@ class WordCount extends HTMLElement {
     const resize = this._getResize()
     const css = `<style> @import ${WordCount.CSSFILE}; </style>`
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
-    <textarea id="word-counter-container" placeholder="${this.initText}" style="resize:${resize}"></textarea>
+    <textarea id="word-counter-container" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
     <div id="word-counter"></div>
     </div>`
     return css + html
