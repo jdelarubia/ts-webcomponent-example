@@ -3,12 +3,15 @@
  *
  * Creates an editable textarea which shows the number of words on the bottom right corner.
  * The position and look of element can be set via CSS.
+ * Possible attributes:
+ * - width & height: give dimensions to the textarea
+ * - refreshrate: frequency (in milliseconds) at which for counting the number of words
+ * - placeholder: phrase to be displayed in the textarea
+ * - resize: ability of the textarea to be resized (true or false)
  */
 
 type WordCountAttrs = {
   refreshRate?: number
-  width?: string
-  height?: string
   initText?: string
   resize?: Boolean
   height?: string
