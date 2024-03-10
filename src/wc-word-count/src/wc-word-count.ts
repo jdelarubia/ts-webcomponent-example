@@ -4,6 +4,7 @@
  * Creates an editable textarea which shows the number of words on the bottom right corner.
  * The position and look of element can be set via CSS.
  * Possible attributes:
+ * - name: name of the textarea
  * - width & height: give dimensions to the textarea
  * - refreshrate: frequency (in milliseconds) at which for counting the number of words
  * - placeholder: phrase to be displayed in the textarea
