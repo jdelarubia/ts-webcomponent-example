@@ -32,6 +32,9 @@ class WordCount extends HTMLElement {
 
   constructor(attrs: WordCountAttrs = {}) {
     super()
+    this.refreshRate = Number(
+      attrs?.refreshRate || this._getAttributeOrDefault('refreshrate', WordCount.REFRESH)
+    )
     this.placeholder = attrs?.placeholder || this.textContent || WordCount.PLACEHOLDER
     this.textContent = ''
     this.template = document.createElement('template')
