@@ -25,7 +25,7 @@ class WordCount extends HTMLElement {
 
   constructor(attrs: WordCountAttrs = {}) {
     super()
-    this.refreshRate = attrs.refreshRate || WordCount.REFRESH
+    this.refreshRate = this._getRefreshRate() || attrs?.refreshRate || WordCount.REFRESH
     this.initText = this.textContent || attrs?.initText || WordCount.INITTEXT
     this.textContent = ''
     this.template = document.createElement('template')
@@ -41,6 +41,11 @@ class WordCount extends HTMLElement {
       const content = editableContent.value || ''
       wordCount.textContent = this.countWords(content).toString()
     }, this.refreshRate)
+  }
+
+  _getRefreshRate(): number | null {
+    const refreshRate = <string>this.getAttribute('refreshrate')
+    return parseInt(refreshRate) || null
   }
 
   _getElementDimensions(): [string, string] {
