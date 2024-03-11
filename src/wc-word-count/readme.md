@@ -13,7 +13,9 @@ Component that uses a `<textarea>`, counts and shows the number of words in it i
 
 ## Component distribution
 
-- Copy `src/wc-word-count.css` & `src/wc-word-count.js` (or `src/wc-word-count.ts`) on to your project.
+- Copy
+  - `src/wc-word-count.css`, &
+  - `src/wc-word-count.js` (or `src/wc-word-count.ts`) on to your project.
 - Set the specific link to `wc-word-count.css` from your `wc-word-count.js` (or `.ts`).
 
 ---
