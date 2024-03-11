@@ -1,6 +1,6 @@
 # WordCount
 
-This example uses a `<textarea>` to allow us to write text, followed by a `<div>` to show the number of words in it.
+Component that uses a `<textarea>`, counts and shows the number of words in it in real-time.
 
 ## TOC
 
@@ -13,8 +13,8 @@ This example uses a `<textarea>` to allow us to write text, followed by a `<div>
 
 ## Component distribution
 
-- Copy `src/wc-word-count.css` & `src/wc-word-count.js` on to your project.
-- Fix the linking to `wc-word-count.css` from your `wc-word-count.js`.
+- Copy `src/wc-word-count.css` & `src/wc-word-count.js` (or `src/wc-word-count.ts`) on to your project.
+- Set the specific link to `wc-word-count.css` from your `wc-word-count.js` (or `.ts`).
 
 ---
 
