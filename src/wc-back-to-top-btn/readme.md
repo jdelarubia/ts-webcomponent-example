@@ -17,6 +17,7 @@ Component that shows a button-like anchor to go back to a given tag.
   - `src/wc-back-to-top-btn.css`, &
   - `src/wc-back-to-top-btn.js` (or `src/wc-back-to-top-btn.ts`) on to your project.
 - Set the specific link to `wc-back-to-top-btn.css` from your `wc-back-to-top-btn.js` (or `.ts`).
+- Make changes to your `.css` file until you get the result you're looking for.
 
 ---
 
@@ -41,12 +42,12 @@ Via `JavaScript`, provide the same attributes as an object as shown below.
 const containerSection = document.querySelector('#container-section')
 containerSection.appendChild(
   new BackToTopBtn({
-    tag: 'top',
-    color: 'darkgreen',
-    background: 'lime',
-    opacity: 0.6,
-    strokeWidth: 0.3,
-    position: 'bottom left',
+    tag: 'top', // destination tag
+    color: 'darkgreen', // primary color
+    background: 'lime', // component background color
+    opacity: 0.6, // level of background opacity (0 to 1)
+    strokeWidth: 0.3, // stroke thickness
+    position: 'bottom left', // CSS-defined positioning
   })
 )
 ```
