@@ -17,6 +17,7 @@ Component that uses a `<textarea>`, counts and shows the number of words in it i
   - `src/wc-word-count.css`, &
   - `src/wc-word-count.js` (or `src/wc-word-count.ts`) on to your project.
 - Set the specific link to `wc-word-count.css` from your `wc-word-count.js` (or `.ts`).
+- Make changes to your `.css` file until you get the result you're looking for.
 
 ---
 
@@ -41,10 +42,10 @@ const containerSection = document.querySelector('#container-section')
 containerSection.appendChild(
   new WordCount({
     name: 'textarea-fieldname',
-    refresh: '3000',
-    width: '10em',
-    height: '5em',
-    resize: false,
+    refresh: '3000', // milliseconds
+    width: '10em', // CSS measure
+    height: '5em', // CSS measure
+    resize: false, // false for no-resize, or leave unset for resize = "both"
     placeholder: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
   })
 )
