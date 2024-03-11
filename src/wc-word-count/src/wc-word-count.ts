@@ -19,7 +19,7 @@ type WordCountAttrs = {
   width?: string
 }
 
-class WordCount extends HTMLElement {
+export class WordCount extends HTMLElement {
   private template
   private placeholder: string
   private refreshRate: number

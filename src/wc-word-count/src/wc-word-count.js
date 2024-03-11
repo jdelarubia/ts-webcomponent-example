@@ -1,4 +1,3 @@
-"use strict";
 /**
  * wc-word-count.ts
  *
@@ -11,7 +10,7 @@
  * - placeholder: phrase to be displayed in the textarea
  * - resize: ability of the textarea to be resized (true or false)
  */
-class WordCount extends HTMLElement {
+export class WordCount extends HTMLElement {
     template;
     placeholder;
     refreshRate;
