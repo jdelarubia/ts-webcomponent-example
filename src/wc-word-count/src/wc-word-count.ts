@@ -30,7 +30,7 @@ class WordCount extends HTMLElement {
   static HEIGHT = '10em'
   static RESIZE = 'both'
   static PLACEHOLDER = 'Enter some text here...'
-  static CSSFILE = './src/wc-word-count.css'
+  static CSSIMPORT = `<style> @import './src/wc-word-count.css'; </style>`
 
   constructor(attrs: WordCountAttrs = {}) {
     super()
@@ -75,7 +75,7 @@ class WordCount extends HTMLElement {
     const height = this._getAttributeOrDefault('height', WordCount.HEIGHT)
     const name = this._getAttributeOrDefault('name', WordCount.NAME)
     const resize = this._getResize()
-    const css = `<style> @import ${WordCount.CSSFILE}; </style>`
+    const css = WordCount.CSSIMPORT
     const html = `<div class="word-counter" style="width: ${width}; height: ${height}">
     <textarea id="word-counter-container" name="${name}" placeholder="${this.placeholder}" style="resize:${resize}"></textarea>
     <div id="word-counter"></div>
