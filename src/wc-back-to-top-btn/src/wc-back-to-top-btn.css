@@ -1,0 +1,75 @@
+/**
+ * wc-back-to-top-btn.css
+ * back-to-top-btn component styles
+ * requires the following properties defined in main style.css
+ * --btn-margin
+ * --btn-thumb-size
+ */
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+:root {
+  --btn-thumb-size: 4rem;
+  --btn-margin: 1rem;
+}
+
+.back-to-top-btn {
+  position: fixed;
+  aspect-ratio: 1;
+  height: var(--btn-thumb-size);
+  width: var(--btn-thumb-size);
+}
+a.back-to-top-btn.bottom {
+  bottom: var(--btn-margin);
+}
+a.back-to-top-btn.top {
+  top: var(--btn-main);
+}
+a.back-to-top-btn.left {
+  left: var(--btn-margin);
+}
+a.back-to-top-btn.right {
+  right: var(--btn-margin);
+}
+
+.back-to-top-btn svg {
+  height: var(--btn-thumb-size);
+  width: var(--btn-thumb-size);
+}
+
+.back-to-top-btn.show {
+  visibility: visible;
+  animation: fadeInAnimation 1s ease 0s 1 normal forwards;
+}
+
+.back-to-top-btn.show:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
+
+.back-to-top-btn:not(.show) {
+  animation: fadeOutAnimation 1s ease 0s 1 normal forwards;
+}
+
+.back-to-top-btn:before {
+  content: '';
+  position: absolute;
+  inset: 25%;
+  transform: translateY(30%) rotate(-45deg);
+}
