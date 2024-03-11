@@ -3,7 +3,6 @@
   --background-field: #dddce4;
 }
 div.word-counter {
-  /* border: 1px orange dashed; */
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
