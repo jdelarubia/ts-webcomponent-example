@@ -31,7 +31,14 @@ export class InstagramBtn extends HTMLElement {
   private position
   private template
   //defaults
-  constructor() {
+  static URL = ''
+  static COLOR = '#9c6d01'
+  static BACKGROUND = '#fff'
+  static OPACITY = 0.8
+  static STROKEWIDTH = 0.7
+  static POSITION = 'bottom right'
+  static CSSIMPORT = `<style> @import './src/wc-instagram-btn.css'; </style>`
+
     super()
   }
   connectedCallback() {}
