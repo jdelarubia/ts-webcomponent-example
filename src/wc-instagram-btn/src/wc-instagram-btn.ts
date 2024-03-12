@@ -13,6 +13,15 @@
  * window.customElements.define('instagram-btn', InstagramBtn)
  */
 
+type InstagramBtnAttrs = {
+  url?: string
+  color?: string
+  background?: string
+  opacity?: number
+  strokeWidth?: number
+  position?: string
+}
+
 export class InstagramBtn extends HTMLElement {
   //defaults
   constructor() {
