@@ -40,6 +40,11 @@ export class InstagramBtn extends HTMLElement {
   static CSSIMPORT = `<style> @import './src/wc-instagram-btn.css'; </style>`
 
     super()
+  connectedCallback() {
+    this.appendChild(this.template.content.cloneNode(true))
+    const a = <HTMLAnchorElement>this.querySelector('a')
+    a.href = String(this.url)
+  }
 
   _getElementPosition(): string {
     const positionCss: Array<string> = []
