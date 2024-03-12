@@ -6,6 +6,8 @@ Collection of simple examples on how to extend the functionality or the look of 
   Component that allows to edit some text in a `<textarea>` and count the number of words in it.
 - [wc-back-to-top-btn](./src/wc-back-to-top-btn/readme.md)
   Button to get back to a given tag.
+- [wc-instagram-btn](./src/wc-back-to-top-btn/readme.md)
+  Button to link to an instagram account.
 
 ---
 
