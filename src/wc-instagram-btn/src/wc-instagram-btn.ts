@@ -105,3 +105,16 @@ export class InstagramBtn extends HTMLElement {
 } //. InstagramBtn
 
 window.customElements.define('wc-instagram-btn', InstagramBtn)
+
+// Create and add a second InstagramBtn component programmatically
+const secondHalf = document.querySelector('#second-half')
+secondHalf?.appendChild(
+  new InstagramBtn({
+    url: 'top',
+    color: 'darkgreen',
+    background: 'lime',
+    opacity: 0.6,
+    strokeWidth: 0.3,
+    position: 'bottom left',
+  })
+)
