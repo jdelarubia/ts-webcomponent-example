@@ -40,8 +40,17 @@ export class InstagramBtn extends HTMLElement {
   static CSSIMPORT = `<style> @import './src/wc-instagram-btn.css'; </style>`
 
     super()
+  /**
+   * Generic method to retrieve the value of an attribute or, if not present, a default value.
+   * @param id string
+   * @param defaultValue string|number
+   * @returns string|number
+   */
+  _getAttributeOrDefault(id: string, defaultValue: string | number): string | number {
+    const attr = this.getAttribute(id)?.toLowerCase()
+    return attr || defaultValue
   }
-  connectedCallback() {}
+
   _render() {
     return
   }
