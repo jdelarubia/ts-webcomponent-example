@@ -1,0 +1,59 @@
+/**
+ * wc-instagram-btn.css
+ * <instagram-btm> component styles
+ * requires the following properties defined in main style.css
+ * --btn-margin
+ * --btn-thumb-size
+ */
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+:root {
+  --btn-thumb-size: 4rem;
+  --btn-margin: 1rem;
+}
+
+.instagram-btn {
+  position: fixed;
+  aspect-ratio: 1;
+  height: var(--btn-thumb-size);
+  width: var(--btn-thumb-size);
+}
+a.instagram-btn.bottom {
+  bottom: var(--btn-margin);
+}
+a.instagram-btn.top {
+  top: var(--btn-margin);
+}
+a.instagram-btn.left {
+  left: var(--btn-margin);
+}
+a.instagram-btn.right {
+  right: var(--btn-margin);
+}
+
+.instagram-btn svg {
+  height: var(--btn-thumb-size);
+  width: var(--btn-thumb-size);
+}
+
+.instagram-btn:hover {
+  transform: scale(1.2);
+  transition: transform 0.2s;
+}
