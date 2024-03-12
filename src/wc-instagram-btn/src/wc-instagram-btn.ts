@@ -40,6 +40,23 @@ export class InstagramBtn extends HTMLElement {
   static CSSIMPORT = `<style> @import './src/wc-instagram-btn.css'; </style>`
 
     super()
+
+  _getElementPosition(): string {
+    const positionCss: Array<string> = []
+    const position = this.getAttribute('position')?.split(' ')
+
+    position?.forEach((style) => {
+      positionCss.push(style)
+    })
+    if (!positionCss.includes('top') && !positionCss.includes('bottom')) {
+      positionCss.push('bottom')
+    }
+    if (!positionCss.includes('right') && !positionCss.includes('left')) {
+      positionCss.push('right')
+    }
+    return positionCss.join(' ')
+  }
+
   /**
    * Generic method to retrieve the value of an attribute or, if not present, a default value.
    * @param id string
