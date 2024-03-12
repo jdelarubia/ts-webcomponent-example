@@ -39,7 +39,20 @@ export class InstagramBtn extends HTMLElement {
   static POSITION = 'bottom right'
   static CSSIMPORT = `<style> @import './src/wc-instagram-btn.css'; </style>`
 
+  constructor(attrs: InstagramBtnAttrs) {
     super()
+    this.url = attrs?.url || this._getAttributeOrDefault('url', InstagramBtn.URL)
+    this.color = attrs?.color || this._getAttributeOrDefault('color', InstagramBtn.COLOR)
+    this.background =
+      attrs?.background || this._getAttributeOrDefault('background', InstagramBtn.BACKGROUND)
+    this.opacity = attrs?.opacity || this._getAttributeOrDefault('opacity', InstagramBtn.OPACITY)
+    this.strokeWidth =
+      attrs?.strokeWidth || this._getAttributeOrDefault('strokeWidth', InstagramBtn.STROKEWIDTH)
+    this.position = attrs?.position || this._getElementPosition()
+    this.template = document.createElement('template')
+    this.template.innerHTML = this._render()
+  }
+
   connectedCallback() {
     this.appendChild(this.template.content.cloneNode(true))
     const a = <HTMLAnchorElement>this.querySelector('a')
