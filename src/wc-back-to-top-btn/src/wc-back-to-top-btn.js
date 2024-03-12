@@ -100,7 +100,7 @@ export class BackToTopBtn extends HTMLElement {
     }
 } //. BackToTopBtn
 window.customElements.define('wc-back-to-top-btn', BackToTopBtn);
-// Create and add a WordCount component programmatically
+// Create and add a second BackToTopBtn component programmatically
 const secondHalf = document.querySelector('#second-half');
 secondHalf?.appendChild(new BackToTopBtn({
     tag: 'top',
