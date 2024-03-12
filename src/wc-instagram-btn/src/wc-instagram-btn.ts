@@ -23,6 +23,13 @@ type InstagramBtnAttrs = {
 }
 
 export class InstagramBtn extends HTMLElement {
+  private url
+  private color
+  private background
+  private opacity
+  private strokeWidth
+  private position
+  private template
   //defaults
   constructor() {
     super()
